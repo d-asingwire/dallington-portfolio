@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Professional software engineer, founder of AgriX, and mentor.">
     <meta name="author" content="Dallington Asingwire">
-    <title>Dallington Asingwire - Academic Portfolio</title>
+    <title>Dallington Asingwire - Software Engineer & Researcher</title>
+
+    <!-- Social Sharing (Open Graph) -->
+    <meta property="og:title" content="Dallington Asingwire - Software Engineer & Researcher">
+    <meta property="og:description"
+        content="Portfolio of Dallington Asingwire, a Software Engineer and Researcher specializing in AI, Machine Learning, and Earth Observation for social impact.">
+    <meta property="og:image" content="img/profile.jpg">
+    <meta property="og:url" content="https://dallington.pivosoft.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dallington Asingwire - Software Engineer">
+    <meta name="twitter:description" content="Building scalable AI-driven systems for social good.">
+    <meta name="twitter:image" content="img/profile.jpg">
+    <meta name="twitter:creator" content="@MrDallington">
 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
 
@@ -20,7 +35,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css?v=5.9">
+    <link rel="stylesheet" href="css/style.css?v=5.11">
 </head>
 
 <body>
@@ -641,6 +656,11 @@
 
     </main>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <footer class="modern-footer">
         <div class="container">
             <div class="footer-content">
@@ -658,13 +678,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Dallington Asingwire. All Rights Reserved.</p>
+                <p>&copy; <span id="year"></span> Dallington Asingwire. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="./js/main.js"></script>
     <script>
+        // Dynamic Date
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         // Scroll Animation (IntersectionObserver)
         const observerOptions = {
             threshold: 0.1,
@@ -723,6 +746,48 @@
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
+            });
+        });
+
+        // Back to Top & Scroll Spy
+        const backToTopBtn = document.getElementById('backToTop');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            // Show/Hide Back to Top
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+
+            // Scroll Spy Logic
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Offset for header height (approx 80px)
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top Click
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
