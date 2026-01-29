@@ -116,6 +116,8 @@ a.link:hover::after {
 
 .section {
     padding: 3rem 0;
+    scroll-margin-top: 6rem;
+    /* Fix sticky header overlap */
     /* Reduced consistent spacing */
 }
 
@@ -138,7 +140,7 @@ a.link:hover::after {
 }
 
 hr.divider {
-    border: 0;
+    border: none;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--border-color), transparent);
     margin: 3rem 0;
@@ -501,6 +503,43 @@ hr.divider {
     font-weight: 600;
 }
 
+/* --- RESEARCH TAGS --- */
+.research-tags {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 Equal Columns */
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 100%;
+    /* Ensure it fits in parent */
+}
+
+/* Define .research-tag clearly (was .exp-h previously by mistake) */
+/* Define .research-tag clearly (was .exp-h previously by mistake) */
+.research-tag {
+    background: transparent;
+    /* "minus applying designs" */
+    color: var(--text-main);
+    padding: 0;
+    font-size: 0.95rem;
+    /* Slightly larger text */
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+    /* Keep it on one line */
+}
+
+.research-tag i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    width: 20px;
+    /* Fixed width for perfect alignment */
+    text-align: center;
+}
+
 .exp-header .time {
     background: #f1f2f6;
     color: #636e72;
@@ -514,7 +553,6 @@ hr.divider {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* Responsive */
     gap: 2rem;
 }
 
@@ -525,7 +563,6 @@ hr.divider {
     box-shadow: var(--shadow-soft);
     border: 1px solid var(--border-color);
     border-top: 4px solid var(--accent-color);
-    /* Professional Accent */
     transition: all 0.3s var(--transition-curve);
     position: relative;
     overflow: hidden;
@@ -832,6 +869,11 @@ hr.divider {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .research-tags {
+        grid-template-columns: repeat(2, 1fr);
+        /* Switch to 2 columns on mobile */
     }
 
     /* Fixed Awards: Single Line */

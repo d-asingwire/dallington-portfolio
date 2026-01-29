@@ -20,7 +20,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css?v=4.0">
+    <link rel="stylesheet" href="css/style.css?v=5.1">
 </head>
 
 <body>
@@ -57,7 +57,7 @@
                     <p>
                         I am a professional software engineer, computer science instructor, and Chevening Scholar
                         currently
-                        pursuing an MSc in Computer Science at the University of Edinburgh, UK. I am the founder of <a
+                        pursuing an MSc in Computer Science at the University of Edinburgh, UK. I founded <a
                             href="https://agrixfarm.com" class="link" target="_blank">AgriX</a>, a platform that
                         empowers farmers in remote areas of Uganda to access profitable markets for their agricultural
                         produce, purchase inputs, and gain access to vital farming information and weather insights. I
@@ -112,9 +112,20 @@
                             is not only theoretical but designed for live testing and continuous improvement in real
                             farming communities. By embedding AI-driven risk models into AgriX, I aim to support farmers
                             in making timely decisions, help governments and NGOs allocate resources more effectively,
-                            and ensure that advanced computational methods translate into measurable social and economic
                             impact on the ground.
                         </p>
+
+                        <div class="research-tags">
+                            <span class="research-tag"><i class="fas fa-satellite"></i> Earth Observation</span>
+                            <span class="research-tag"><i class="fas fa-robot"></i> Machine Learning</span>
+                            <span class="research-tag"><i class="fas fa-eye"></i> Computer Vision</span>
+                            <span class="research-tag"><i class="fas fa-network-wired"></i> Deep Learning</span>
+                            <span class="research-tag"><i class="fas fa-seedling"></i> Food Security</span>
+                            <span class="research-tag"><i class="fas fa-cloud-showers-heavy"></i> Climate Risk
+                                Modeling</span>
+                            <span class="research-tag"><i class="fas fa-chart-line"></i> Timely Interventions</span>
+                            <span class="research-tag"><i class="fas fa-globe-africa"></i> Sub-Saharan Africa</span>
+                        </div>
                     </div>
                     <div class="profile-image-container">
                         <img src="img/dallington.jpg" alt="Dallington Asingwire" class="profile-image">
@@ -629,6 +640,25 @@
 
     <script src="./js/main.js"></script>
     <script>
+        // Scroll Animation (IntersectionObserver)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.add('reveal');
+            observer.observe(section);
+        });
+
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobile-toggle');
         const mainNav = document.getElementById('main-nav');
