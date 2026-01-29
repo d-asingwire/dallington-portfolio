@@ -5,12 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
         yearEl.textContent = new Date().getFullYear();
     }
 
+
     // Load DEV.to Articles
     const articlesWrapper = document.getElementById('articles-wrapper');
     const viewMoreContainer = document.getElementById('view-more-container');
 
     if (articlesWrapper) {
-        fetch('https://dev.to/api/articles?username=dallington256&per_page=6')
+        // Timeout utility to prevent server hanging
+        const fetchWithTimeout = (url, ms) => {
+            const controller = new AbortController();
+            const promise = fetch(url, { signal: controller.signal });
+            const timeout = new Promise((_, reject) => {
+                setTimeout(() => {
+                    controller.abort();
+                    reject(new Error('Request timed out'));
+                }, ms);
+            });
+            return Promise.race([promise, timeout]);
+        };
+
+        fetchWithTimeout('https://dev.to/api/articles?username=dallington256&per_page=6', 5000)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

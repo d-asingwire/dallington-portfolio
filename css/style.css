@@ -254,6 +254,10 @@ hr.divider {
     /* Removed floats */
 }
 
+.mt-large {
+    margin-top: 4rem;
+}
+
 /* Mobile check for float */
 /* Mobile Responsive */
 @media (max-width: 900px) {
@@ -918,6 +922,8 @@ hr.divider {
         align-items: flex-start;
         gap: 0.5rem;
     }
+
+
 
     .footer-content {
         flex-direction: column;
