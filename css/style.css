@@ -921,11 +921,137 @@ hr.divider {
     }
 }
 
+/* --- PRIMARY BUTTON (DOWNLOAD CV) --- */
+.btn-primary {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(28, 126, 214, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(28, 126, 214, 0.4);
+    color: #fff;
+}
+
 /* Articles Grid */
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.article-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.2rem;
+    color: var(--text-main);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.article-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+    text-align: center;
+    background: #fff;
+    /* Clean white */
+    /* Padding inherited from .section to match others */
+    position: relative;
+    /* margin-top removed to match standard spacing */
+}
+
+/* Elegant separator line removed */
+
+.contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-section .section-title {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    /* Slightly simplified */
+}
+
+/* Center the underline for this centered section */
+.contact-section .section-title::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-content p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 3.5rem auto;
+    line-height: 1.6;
+}
+
+/* Socials: Larger and Centered */
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    /* More space between icons */
+}
+
+.contact-socials a {
+    width: 60px;
+    /* Larger touch targets */
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Very subtle border */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.contact-socials a:hover {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-8px);
+    /* Higher lift */
+    box-shadow: 0 15px 30px rgba(28, 126, 214, 0.25);
+    /* Colored shadow */
+}
+
+.contact-socials a:hover i {
+    color: #fff !important;
 }
 
 .article-card {
