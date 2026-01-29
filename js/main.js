@@ -5,6 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
         yearEl.textContent = new Date().getFullYear();
     }
 
+    // Load DEV.to Articles
+    const articlesWrapper = document.getElementById('articles-wrapper');
+    if (articlesWrapper) {
+        fetch('https://dev.to/api/articles?username=dallington256&per_page=6')
+            .then(response => response.json())
+            .then(articles => {
+                articlesWrapper.innerHTML = ''; // Clear loading spinner
+                articles.forEach(article => {
+                    const articleLink = document.createElement('a');
+                    articleLink.href = article.url;
+                    articleLink.target = '_blank';
+                    articleLink.className = 'article-card';
+                    articleLink.innerHTML = `
+                        <i class="fab fa-dev"></i>
+                        <span>${article.title}</span>
+                    `;
+                    articlesWrapper.appendChild(articleLink);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching articles:', error);
+                // Fallback content if API fails
+                articlesWrapper.innerHTML = `
+                    <div class="text-center" style="grid-column: 1 / -1; color: var(--text-muted);">
+                        <p>Unable to load articles at the moment. <a href="https://dev.to/dallington256" target="_blank" class="link">View them on DEV.to</a></p>
+                    </div>
+                `;
+            });
+    }
+
     // Scroll Animation (IntersectionObserver)
     const observerOptions = {
         threshold: 0.1,

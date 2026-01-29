@@ -8,6 +8,15 @@
     <meta name="author" content="Dallington Asingwire">
     <title>Dallington Asingwire - Software Engineer & Researcher</title>
 
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ55EWCK5V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-WJ55EWCK5V');
+    </script>
+
     <!-- Social Sharing (Open Graph) -->
     <meta property="og:title" content="Dallington Asingwire - Software Engineer & Researcher">
     <meta property="og:description"
@@ -23,6 +32,32 @@
     <meta name="twitter:image" content="img/profile.jpg">
     <meta name="twitter:creator" content="@MrDallington">
 
+    <!-- JSON-LD Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dallington Asingwire",
+      "url": "https://dallington.pivosoft.com",
+      "image": "https://dallington.pivosoft.com/img/profile.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/dallington-asingwire-0468a414a/",
+        "https://github.com/d-asingwire/",
+        "https://twitter.com/MrDallington",
+        "https://dev.to/dallington256"
+      ],
+      "jobTitle": "Software Engineer & Researcher",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Pivosoft"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Edinburgh"
+      },
+      "description": "Software Engineer and Researcher specializing in AI, Machine Learning, and Earth Observation for social impact."
+    }
+    </script>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png" />
 
     <!-- Fonts: Playfair Display (Serif), Inter (Sans) -->
@@ -35,7 +70,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css?v=5.15">
+    <link rel="stylesheet" href="css/style.css?v=5.18">
 </head>
 
 <body>
@@ -466,7 +501,12 @@
                             <h3><a href="https://agrixfarm.com" target="_blank" class="link">AgriX</a></h3>
                         </div>
                         <div class="project-body">
-                            <span class="tech-stack">Node.js, PostgreSQL, Next.js, RabbitMQ</span>
+                            <span class="tech-stack">
+                                <i class="fab fa-node-js" title="Node.js"></i>
+                                <i class="fas fa-database" title="PostgreSQL"></i>
+                                <i class="fab fa-react" title="Next.js"></i>
+                                <i class="fas fa-layer-group" title="RabbitMQ"></i>
+                            </span>
                             <p>
                                 AgriX is a comprehensive mobile platform designed to empower farmers by providing access
                                 to
@@ -485,7 +525,11 @@
                             </h3>
                         </div>
                         <div class="project-body">
-                            <span class="tech-stack">React Native, ASP.NET C#, Postgres</span>
+                            <span class="tech-stack">
+                                <i class="fab fa-react" title="React Native"></i>
+                                <i class="fas fa-code" title="ASP.NET C#"></i>
+                                <i class="fas fa-database" title="Postgres"></i>
+                            </span>
                             <p>
                                 An all-in-one solution (web and mobile) for seamless dairy management. Enables dairy
                                 administrators to manage farmer profiles, track milk records, monitor financial
@@ -504,7 +548,11 @@
                                     CMS</a></h3>
                         </div>
                         <div class="project-body">
-                            <span class="tech-stack">Node.js, Next.js, PostgreSQL</span>
+                            <span class="tech-stack">
+                                <i class="fab fa-node-js" title="Node.js"></i>
+                                <i class="fab fa-react" title="Next.js"></i>
+                                <i class="fas fa-database" title="PostgreSQL"></i>
+                            </span>
                             <p>
                                 A robust cloud-based software solution designed to optimize the management of contractor
                                 and
@@ -522,7 +570,10 @@
                             </h3>
                         </div>
                         <div class="project-body">
-                            <span class="tech-stack">Laravel, Bootstrap</span>
+                            <span class="tech-stack">
+                                <i class="fab fa-laravel" title="Laravel"></i>
+                                <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                            </span>
                             <p>
                                 Cloud-based CRM for maize milling factories. Facilitates recording processed maize,
                                 production of flour, customer orders, and invoicing via WhatsApp API.
@@ -536,7 +587,10 @@
                             <h3><a href="https://brueilexgroup.com" target="_blank" class="link">Brueilex Group</a></h3>
                         </div>
                         <div class="project-body">
-                            <span class="tech-stack">NextJs, Tailwind</span>
+                            <span class="tech-stack">
+                                <i class="fab fa-react" title="Next.js"></i>
+                                <i class="fab fa-css3-alt" title="Tailwind"></i>
+                            </span>
                             <p>Specializes in irrigation, water pumping and energy solutions.</p>
                         </div>
                     </div>
@@ -546,7 +600,11 @@
                             <h3>Vastel</h3>
                         </div>
                         <div class="project-body">
-                            <span class="tech-stack">React Native, Laravel, ZegoCloud</span>
+                            <span class="tech-stack">
+                                <i class="fab fa-react" title="React Native"></i>
+                                <i class="fab fa-laravel" title="Laravel"></i>
+                                <i class="fas fa-cloud" title="ZegoCloud"></i>
+                            </span>
                             <p>Mobile application connecting patients with medical professionals for virtual
                                 consultations.
                             </p>
@@ -563,72 +621,15 @@
         <section id="articles" class="section">
             <div class="container">
                 <h2 class="section-title">Articles on DEV Community</h2>
-                <div class="articles-grid">
-                    <a href="https://dev.to/dallington256/using-guzzle-http-in-laravel-to-send-http-requests-4po6"
-                        target="_blank" class="article-card">
-                        <i class="fab fa-dev"></i>
-                        Using Guzzle Http Client to send Http Requests to the API in Laravel.
-                    </a>
-                    <a href="https://dev.to/dallington256/using-env-file-in-react-native-application-3961"
-                        target="_blank" class="article-card">
-                        <i class="fab fa-dev"></i>
-                        How to use .env file in a React Native Application
-                    </a>
-                    <a href="https://dev.to/dallington256/how-to-have-exportable-datatables-in-laravel-using-yajra-datatables-mb"
-                        target="_blank" class="article-card">
-                        <i class="fab fa-dev"></i>
-                        How to have exportable datatables in laravel using yajra datatables plugin
-                    </a>
-                    <a href="https://dev.to/dallington256/how-to-use-swr-in-a-next-js-app-19gl" target="_blank"
-                        class="article-card">
-                        <i class="fab fa-dev"></i>
-                        How to use SWR in a Next.js app
-                    </a>
-                    <a href="https://dev.to/dallington256/how-to-send-sms-using-twilio-in-nodejs-8lp" target="_blank"
-                        class="article-card">
-                        <i class="fab fa-dev"></i>
-                        How to send sms to a phone number in Node.js
-                    </a>
-                    <a href="https://dev.to/dallington256/how-to-read-and-display-images-from-cloudinary-in-a-reactjs-or-nextjs-app-5f9k"
-                        target="_blank" class="article-card">
-                        <i class="fab fa-dev"></i>
-                        How to read and display Images from Cloudinary in a reactjs or nextjs app
-                    </a>
-                    <a href="https://dev.to/dallington256/how-to-upload-an-image-or-profile-picture-to-the-laravel-api-in-react-native-1i2c"
-                        target="_blank" class="article-card">
-                        <i class="fab fa-dev"></i>
-                        How to Upload an Image or profile picture to the Laravel API in React Native
-                    </a>
-                    <a href="https://dev.to/dallington256/polymorphism-in-java-11p1" target="_blank"
-                        class="article-card">
-                        <i class="fab fa-dev"></i>
-                        Polymorphism in java
-                    </a>
-                    <a href="https://dev.to/dallington256/array-of-objects-in-java-5c1l" target="_blank"
-                        class="article-card">
-                        <i class="fab fa-dev"></i>
-                        Arrays of Objects in Java
-                    </a>
-                    <a href="https://dev.to/dallington256/connecting-to-mysql-database-in-java-3lej" target="_blank"
-                        class="article-card">
-                        <i class="fab fa-dev"></i>
-                        Connecting to MySQL database in java
-                    </a>
-                    <a href="https://dev.to/dallington256/improving-your-reasoning-with-arrays-in-java-5b1j"
-                        target="_blank" class="article-card">
-                        <i class="fab fa-dev"></i>
-                        Improving your reasoning with Arrays in java
-                    </a>
-                    <a href="https://dev.to/dallington256/inner-classes-or-nested-classes-in-java-4m8d" target="_blank"
-                        class="article-card">
-                        <i class="fab fa-dev"></i>
-                        Inner classes or nested classes in java
-                    </a>
+                <div class="articles-grid" id="articles-wrapper">
+                    <div class="text-center" style="width: 100%; grid-column: 1 / -1;">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--accent-color);"></i>
+                    </div>
                 </div>
-                <p class="mt-medium text-center">
-                    <a href="https://dev.to/dallington256" target="_blank" class="link">View more on DEV.to &rarr;</a>
-                </p>
             </div>
+            <p class="mt-medium text-center">
+                <a href="https://dev.to/dallington256" target="_blank" class="link">View more on DEV.to &rarr;</a>
+            </p>
         </section>
 
         </div>

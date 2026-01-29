@@ -1012,6 +1012,31 @@ hr.divider {
     margin-right: auto;
 }
 
+/* Tech Stack Icons */
+.tech-stack {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.tech-stack i {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.tech-stack i:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.project-body p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
 .contact-content p {
     font-size: 1.15rem;
     color: var(--text-muted);
@@ -1144,5 +1169,73 @@ hr.divider {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+}
+
+/* Print Optimization */
+@media print {
+
+    /* Hide navigational elements */
+    .main-header,
+    .mobile-toggle,
+    .back-to-top,
+    .footer-socials {
+        display: none !important;
+    }
+
+    /* Reset background and colors for print */
+    body {
+        background-color: #fff;
+        color: #000;
+        font-size: 12pt;
+    }
+
+    /* Ensure text is readable */
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #000;
+    }
+
+    /* Expand containers to full width */
+    .container {
+        width: 100%;
+        max-width: nonebox;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Prevent page breaks inside important elements */
+    .project-item,
+    .skill-category,
+    .exp-item {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+    }
+
+    /* Remove shadows/effects */
+    .project-item,
+    .skill-category {
+        box-shadow: none;
+    }
+
+    /* Improve link readability */
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    /* Show URL for crucial links (optional, but good for CV) */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    /* Hide redundant icons if needed */
+    i {
+        display: none;
     }
 }
