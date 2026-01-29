@@ -917,3 +917,11 @@ hr.divider {
 .text-center {
     text-align: center;
 }
+
+.mt-large {
+    margin-top: 4rem;
+}
+
+.mt-medium {
+    margin-top: 2rem;
+}

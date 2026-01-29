@@ -608,7 +608,7 @@
                         Inner classes or nested classes in java
                     </a>
                 </div>
-                <p class="mt-large text-center">
+                <p class="mt-medium text-center">
                     <a href="https://dev.to/dallington256" target="_blank" class="link">View more on DEV.to &rarr;</a>
                 </p>
             </div>
@@ -657,12 +657,28 @@
             }
         });
 
-        // Close nav when clicking a link
+        // Close nav when clicking a link and prevent hash in URL
         document.querySelectorAll('.main-nav a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Stop URL from changing
+
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+
+                // Close mobile menu if open
                 mainNav.classList.remove('active');
-                mobileToggle.querySelector('i').classList.remove('fa-times');
-                mobileToggle.querySelector('i').classList.add('fa-bars');
+                const icon = mobileToggle.querySelector('i'); // Re-select icon to be safe
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         });
     </script>
