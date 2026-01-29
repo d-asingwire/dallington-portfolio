@@ -29,7 +29,12 @@
         <div class="container">
             <div class="header-inner">
                 <h1 class="header-name">Dallington Asingwire</h1>
-                <nav class="main-nav">
+
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <nav class="main-nav" id="main-nav">
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#education">Education</a></li>
@@ -244,6 +249,13 @@
                         </div>
                     </div>
                     <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> AI & ML</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Deep Learning</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
                         <h3><i class="fas fa-project-diagram"></i> Workflow</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Agile</span>
@@ -251,73 +263,9 @@
                             <span class="skill-tag">Waterfall</span>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-users-cog"></i> Leadership</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Mentorship</span>
-                            <span class="skill-tag">Management</span>
-                            <span class="skill-tag">Strategy</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
-
-
-
-        <!-- Awards Section -->
-        <section id="awards" class="section">
-            <div class="container">
-                <h2 class="section-title">Awards and Honors</h2>
-                <ul class="clean-list">
-                    <li>
-                        <span class="date">2025</span>
-                        <div class="details">
-                            <strong>Chevening Scholarship</strong> - Foreign, Commonwealth & Development Office, UK
-                            <p class="small">Awarded the Chevening Scholarship to pursue an MSc in Computer Science at
-                                the University of Edinburgh.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="date">2021</span>
-                        <div class="details">
-                            <strong>First Class Honors</strong> - Makerere University
-                            <p class="small">Graduated with a CGPA of 4.53 out of 5.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="date">2016 - 2021</span>
-                        <div class="details">
-                            <strong>Dean's List</strong> - Makerere University
-                            <p class="small">Ranked at the top of the class each semester in the Software Engineering
-                                program.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="date">2016 - 2021</span>
-                        <div class="details">
-                            <strong>National Merit Scholarship</strong> - Makerere University
-                            <p class="small">Awarded for ranking in the top 1% of performers in the national high school
-                                examinations.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="date">2017</span>
-                        <div class="details">
-                            <strong>Outstanding service as Minister for Constitutional & Justice Affairs</strong> -
-                            Makerere University
-                        </div>
-                    </li>
-                    <li>
-                        <span class="date">2016</span>
-                        <div class="details">
-                            <strong>Best Student Overall Award</strong> - St.John's S.S Nyabwina
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
 
 
         <!-- Experience Section -->
@@ -434,6 +382,60 @@
             </div>
         </section>
 
+        <!-- Awards Section -->
+        <section id="awards" class="section">
+            <div class="container">
+                <h2 class="section-title">Awards and Honors</h2>
+                <ul class="clean-list">
+                    <li>
+                        <span class="date">2025</span>
+                        <div class="details">
+                            <strong>Chevening Scholarship</strong> - Foreign, Commonwealth & Development Office, UK
+                            <p class="small">Awarded the Chevening Scholarship to pursue an MSc in Computer Science at
+                                the University of Edinburgh.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="date">2021</span>
+                        <div class="details">
+                            <strong>First Class Honors</strong> - Makerere University
+                            <p class="small">Graduated with a CGPA of 4.53 out of 5.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="date">2016 - 2021</span>
+                        <div class="details">
+                            <strong>Dean's List</strong> - Makerere University
+                            <p class="small">Ranked at the top of the class each semester in the Software Engineering
+                                program.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="date">2016 - 2021</span>
+                        <div class="details">
+                            <strong>National Merit Scholarship</strong> - Makerere University
+                            <p class="small">Awarded for ranking in the top 1% of performers in the national high school
+                                examinations.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="date">2017</span>
+                        <div class="details">
+                            <strong>Outstanding service as Minister for Constitutional & Justice Affairs</strong> -
+                            Makerere University
+                        </div>
+                    </li>
+                    <li>
+                        <span class="date">2016</span>
+                        <div class="details">
+                            <strong>Best Student Overall Award</strong> - St.John's S.S Nyabwina
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
 
 
         <!-- Projects Section -->
@@ -533,16 +535,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <div class="project-item">
-                        <div class="project-head">
-                            <h3>Collection Hub</h3>
-                        </div>
-                        <div class="project-body">
-                            <span class="tech-stack">Laravel, jQuery</span>
-                            <p>Web-based POS system for inventory, sales, and report generation.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -637,7 +629,7 @@
                             class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/d-asingwire/" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.x.com/MrDallington/" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="mailto:dasingwire@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:asingwire50dallington@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -647,6 +639,33 @@
     </footer>
 
     <script src="./js/main.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        mobileToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            // Toggle icon between bars and times
+            const icon = mobileToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close nav when clicking a link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 
 </html>
