@@ -171,11 +171,14 @@ hr.divider {
 .header-name {
     display: block;
     font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: var(--text-main);
+    font-weight: 800;
+    /* Extra Bold */
+    font-size: 1.4rem;
+    background: linear-gradient(120deg, var(--text-main), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     margin: 0;
 }
 
