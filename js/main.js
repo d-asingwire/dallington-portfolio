@@ -7,31 +7,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load DEV.to Articles
     const articlesWrapper = document.getElementById('articles-wrapper');
+    const viewMoreContainer = document.getElementById('view-more-container');
+
     if (articlesWrapper) {
         fetch('https://dev.to/api/articles?username=dallington256&per_page=6')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(articles => {
                 articlesWrapper.innerHTML = ''; // Clear loading spinner
-                articles.forEach(article => {
-                    const articleLink = document.createElement('a');
-                    articleLink.href = article.url;
-                    articleLink.target = '_blank';
-                    articleLink.className = 'article-card';
-                    articleLink.innerHTML = `
-                        <i class="fab fa-dev"></i>
-                        <span>${article.title}</span>
+
+                if (articles.length === 0) {
+                    // Handle case where user exists but has no articles
+                    articlesWrapper.innerHTML = `
+                        <div class="text-center" style="grid-column: 1 / -1; color: var(--text-muted);">
+                            <p>No articles found.</p>
+                        </div>
                     `;
-                    articlesWrapper.appendChild(articleLink);
-                });
+                } else {
+                    articles.forEach(article => {
+                        const articleLink = document.createElement('a');
+                        articleLink.href = article.url;
+                        articleLink.target = '_blank';
+                        articleLink.className = 'article-card';
+                        articleLink.innerHTML = `
+                            <i class="fab fa-dev"></i>
+                            <span>${article.title}</span>
+                        `;
+                        articlesWrapper.appendChild(articleLink);
+                    });
+                }
+                // Show "View More" button on success
+                if (viewMoreContainer) viewMoreContainer.style.display = 'block';
             })
             .catch(error => {
                 console.error('Error fetching articles:', error);
                 // Fallback content if API fails
                 articlesWrapper.innerHTML = `
                     <div class="text-center" style="grid-column: 1 / -1; color: var(--text-muted);">
-                        <p>Unable to load articles at the moment. <a href="https://dev.to/dallington256" target="_blank" class="link">View them on DEV.to</a></p>
+                        <p>Unable to load articles directly. You can read them on my DEV.to profile.</p>
                     </div>
                 `;
+                // Show "View More" button on error so user can still navigate
+                if (viewMoreContainer) viewMoreContainer.style.display = 'block';
             });
     }
 
