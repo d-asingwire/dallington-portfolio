@@ -519,27 +519,31 @@ hr.divider {
 /* Define .research-tag clearly (was .exp-h previously by mistake) */
 /* Define .research-tag clearly (was .exp-h previously by mistake) */
 .research-tag {
+    /* Existing styles assumed compliant */
     background: transparent;
-    /* "minus applying designs" */
-    color: var(--text-main);
     padding: 0;
+    color: var(--text-muted);
     font-size: 0.95rem;
-    /* Slightly larger text */
-    font-weight: 500;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.8rem;
-    transition: all 0.3s;
+    gap: 8px;
     white-space: nowrap;
-    /* Keep it on one line */
+    flex: 0 0 auto;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
 .research-tag i {
     color: var(--accent-color);
     font-size: 1.1rem;
     width: 20px;
-    /* Fixed width for perfect alignment */
     text-align: center;
+}
+
+/* Hover Effect for Skills/Tags */
+.research-tag:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
 }
 
 .exp-header .time {
@@ -1031,6 +1035,8 @@ hr.divider {
     height: 60px;
     border-radius: 50%;
     background: #fff;
+    flex-shrink: 0;
+    /* Prevent egg shape */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1123,4 +1129,20 @@ hr.divider {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     color: #fff;
+}
+
+/* Mobile adjustments for contact icons */
+@media (max-width: 480px) {
+    .contact-socials {
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 0 1rem;
+        /* Ensure extra padding from edges */
+    }
+
+    .contact-socials a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 }
