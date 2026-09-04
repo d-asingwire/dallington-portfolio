@@ -83,39 +83,33 @@ h6 {
     letter-spacing: 0.01em;
 }
 
+/*
+    Justified at every width for the typeset scholarly look. hyphens:auto is
+    what stops justification opening rivers of whitespace, especially on narrow
+    phone columns - it needs lang="en" on <html>, which is set.
+*/
 p {
     margin-bottom: 1.1rem;
     color: var(--text-main);
     font-size: 1rem;
     line-height: 1.75;
-    /* Mobile-first: left-aligned. Justified from 769px up, see below. */
-    text-align: left;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
 }
 
 p:last-child {
     margin-bottom: 0;
 }
 
-/* Centred blocks out-specify both alignment rules, above and below */
+/* Centred blocks out-specify the justify rule above */
 .text-center p,
 .contact-content p,
 .footer-bottom p {
     text-align: center;
 }
 
-/*
-    Desktop: justified, for the typeset scholarly look. hyphens:auto is what
-    stops justification opening rivers of whitespace - it needs lang="en" on
-    <html>, which is set.
-*/
-@media (min-width: 769px) {
-    p {
-        text-align: justify;
-        -webkit-hyphens: auto;
-        hyphens: auto;
-        overflow-wrap: break-word;
-    }
-}
 
 strong {
     font-weight: 600;
