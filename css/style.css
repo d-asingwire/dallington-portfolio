@@ -51,7 +51,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -252,7 +252,7 @@ a.link:hover {
 .main-nav a {
     display: inline-block;
     font-family: var(--font-sans);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-muted);
     padding: 2px 0;
@@ -285,7 +285,7 @@ a.link:hover {
    ========================================================================== */
 
 .profile-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .background-layout {
@@ -301,7 +301,7 @@ a.link:hover {
 }
 
 .background-text-col p {
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 .profile-image-container {
@@ -352,7 +352,7 @@ a.link:hover {
 }
 
 .research-tag {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     line-height: 1.4;
     color: var(--text-muted);
     background: var(--accent-soft);
@@ -394,7 +394,7 @@ a.link:hover {
 
 .timeline-meta {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--accent-color);
@@ -409,14 +409,14 @@ a.link:hover {
 
 .institution {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-style: italic;
     color: var(--text-muted);
     margin-bottom: 0.5rem;
 }
 
 .timeline-content p {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     margin-bottom: 0;
 }
@@ -439,7 +439,7 @@ a.link:hover {
 }
 
 .skill-category h3 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-heading);
     margin-bottom: 0.9rem;
@@ -460,7 +460,7 @@ a.link:hover {
 }
 
 .skill-tag {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     line-height: 1.5;
     color: var(--text-muted);
     background: var(--surface-soft);
@@ -499,7 +499,7 @@ a.link:hover {
     grid-column: 1;
     grid-row: 1;
     min-width: 0;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
 }
 
@@ -507,7 +507,7 @@ a.link:hover {
     grid-column: 1;
     grid-row: 2;
     font-family: var(--font-sans);
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-style: italic;
     font-weight: 400;
     color: var(--text-muted);
@@ -525,7 +525,7 @@ a.link:hover {
 .exp-header .time {
     grid-column: 2;
     grid-row: 1;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--accent-color);
@@ -539,7 +539,7 @@ a.link:hover {
 }
 
 .exp-details li {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     line-height: 1.65;
     color: var(--text-soft);
     margin-bottom: 0.35rem;
@@ -583,7 +583,7 @@ a.link:hover {
 
 .clean-list .date {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--accent-color);
@@ -595,7 +595,7 @@ a.link:hover {
     Title and description sizes match .timeline-content h3 / p exactly.
 */
 .clean-list .details {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-style: italic;
     color: var(--text-muted);
 }
@@ -611,7 +611,7 @@ a.link:hover {
 }
 
 .clean-list .details p.small {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-style: normal;
     color: var(--text-muted);
     margin: 0.5rem 0 0;
@@ -643,7 +643,7 @@ a.link:hover {
 }
 
 .project-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -673,7 +673,7 @@ a.link:hover {
 }
 
 .project-body p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.65;
     color: var(--text-muted);
     margin: 0;
@@ -698,7 +698,7 @@ a.link:hover {
     border-radius: 6px;
     padding: 1rem 1.1rem;
     font-family: var(--font-sans);
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     font-weight: 500;
     line-height: 1.5;
     color: var(--text-main);
@@ -717,7 +717,7 @@ a.link:hover {
 }
 
 #view-more-container {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
 }
 
 /* ==========================================================================
@@ -734,7 +734,7 @@ a.link:hover {
 }
 
 .contact-section .section-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 1.25rem;
 }
 
@@ -744,7 +744,7 @@ a.link:hover {
 }
 
 .contact-content p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-muted);
     max-width: 52ch;
     margin: 0 auto 2rem;
@@ -910,11 +910,11 @@ a.link:hover {
 
 @media (max-width: 900px) {
     .section-title {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
     }
 
     .contact-section .section-title {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
     }
 
     /* Bio + photo stack, photo first */
@@ -1003,7 +1003,7 @@ a.link:hover {
     .main-nav a {
         display: block;
         padding: 0.7rem 24px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         border-bottom: none;
         border-left: 2px solid transparent;
     }
@@ -1051,6 +1051,28 @@ a.link:hover {
 @media (max-width: 767px) {
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/*
+    Phones and small tablets: never let body text drop below 16px, and lift the
+    denser card/timeline text so it stays comfortable without zooming.
+*/
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .timeline-content p,
+    .clean-list .details p.small,
+    .exp-details li,
+    .project-body p {
+        font-size: 0.95rem;
     }
 }
 
