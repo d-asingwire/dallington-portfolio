@@ -93,17 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.getElementById('mobile-toggle');
     const mainNav = document.getElementById('main-nav');
 
+    const syncNavState = () => {
+        if (!mobileToggle || !mainNav) return;
+        const open = mainNav.classList.contains('active');
+        mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-times', open);
+            icon.classList.toggle('fa-bars', !open);
+        }
+    };
+
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
             mainNav.classList.toggle('active');
-            // Toggle icon between bars and times
-            const icon = mobileToggle.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            syncNavState();
+        });
+
+        // The toggle is a div with role="button", so wire up keyboard activation
+        mobileToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                mainNav.classList.toggle('active');
+                syncNavState();
             }
         });
     }
@@ -130,22 +142,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (mainNav) {
                     mainNav.classList.remove('active');
                 }
-                const icon = mobileToggle ? mobileToggle.querySelector('i') : null;
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+                syncNavState();
             }
         });
     });
 
     // Back to Top & Scroll Spy
     const backToTopBtn = document.getElementById('backToTop');
+    const header = document.querySelector('.main-header');
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.main-nav a');
 
     window.addEventListener('scroll', () => {
         let current = '';
+
+        // Sticky header shadow once the page has scrolled
+        if (header) {
+            header.classList.toggle('scrolled', window.scrollY > 8);
+        }
 
         // Show/Hide Back to Top
         if (backToTopBtn) {
@@ -171,6 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('active');
             }
         });
+
+        // The last section (Contact) is short and sits at the bottom, so the page
+        // can never scroll far enough for it to pass the threshold above. When the
+        // viewer is at the bottom of the page, force the last nav link active.
+        // This runs after the loop so it overrides whatever it picked.
+        if ((window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 2)) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            if (navLinks.length) {
+                navLinks[navLinks.length - 1].classList.add('active');
+            }
+        }
     });
 
     // Back to Top Click
