@@ -74,7 +74,8 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css?v=2026.09.04">
+    <link id="main-css" rel="stylesheet" href="css/style.css">
+    <script>document.getElementById('main-css').href = 'css/style.css?v=' + Date.now();</script>
 </head>
 
 <body>
@@ -799,7 +800,14 @@
         </div>
     </footer>
 
-    <script src="./js/main.js?v=1.4"></script>
+    <!--
+        Cache-bust main.js. Setting .src on an already-parsed <script> is a no-op
+        (the element's "already started" flag blocks any re-fetch), so the tag is
+        written with the version already on it. Appending a script element
+        instead would load after DOMContentLoaded, and main.js registers all of
+        its behaviour on that event, so it would never run.
+    -->
+    <script>document.write('<script id="main-js" src="js/main.js?v=' + Date.now() + '"><\/script>');</script>
 </body>
 
 </html>
